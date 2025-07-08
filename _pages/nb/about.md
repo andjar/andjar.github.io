@@ -2,7 +2,7 @@
 permalink: /
 title: "Portfolio"
 author_profile: true
-lang: en
+lang: nb
 redirect_from: 
   - /about/
   - /about.html
