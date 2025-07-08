@@ -316,6 +316,7 @@ languages: ["en", "nb"]
 default_lang: "en"
 exclude_from_localization: ["javascript", "images", "css", "assets", "files", "talkmap"] # "public" is often another one
 parallel_localization: true # set to false if build issues arise, or on Windows
+lang_from_path: true
 
 # Mimic GitHub Pages with --safe
 whitelist:
