@@ -24,16 +24,16 @@
             {% assign lang_flag = "" %}
             {% if lang_code == "en" %}
               {% assign lang_name = "English" %}
-              {% assign lang_flag = "🇬🇧" %}
+              {% assign lang_flag = "/images/flags/gb.svg" %}
             {% elsif lang_code == "nb" %}
               {% assign lang_name = "Norsk Bokmål" %}
-              {% assign lang_flag = "🇳🇴" %}
+              {% assign lang_flag = "/images/flags/nb.svg" %}
             {% endif %}
             {% if lang_code == site.active_lang %}
-              <li class="masthead__menu-item masthead__menu-item--active"><a href="#" title="{{ lang_name }}">{{ lang_flag }}</a></li>
+              <li class="masthead__menu-item masthead__menu-item--active"><a href="#" title="{{ lang_name }}"><img src="{{ lang_flag }}" alt="{{ lang_name }}" style="height:1em;vertical-align:middle;"></a></li>
             {% else %}
               <li class="masthead__menu-item">
-                <a href="{{ page.url | I18n_permalink: lang_code }}" title="{{ lang_name }}"> {{ lang_flag }}</a>
+                <a href="{{ page.url | I18n_permalink: lang_code }}" title="{{ lang_name }}"><img src="{{ lang_flag }}" alt="{{ lang_name }}" style="height:1em;vertical-align:middle;"></a>
               </li>
             {% endif %}
           {% endfor %}
