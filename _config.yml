@@ -161,8 +161,8 @@ include:
   - _pages
   - files
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
+  - ".sublime-project" # Changed from "*.sublime-project"
+  - ".sublime-workspace" # Changed from "*.sublime-workspace"
   - .asset-cache
   - .bundle
   - .github
@@ -182,7 +182,8 @@ exclude:
   - local
   - log
   - node_modules
-  - package.json*
+  - "package.json" # Changed from "package.json*"
+  - "package-lock.json" # Added for completeness if it exists
   - Rakefile
   - README
   - tmp

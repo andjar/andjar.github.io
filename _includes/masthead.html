@@ -25,9 +25,9 @@
             {% else %}
               <li class="masthead__menu-item">
                 {% if lang_code == site.default_lang %}
-                  {% static_href %}<a href="{{ site.baseurl_root }}/"> {{ lang_code | upcase }}</a>{% endstatic_href %}
+                  <a href="{{ site.baseurl_root }}/"> {{ lang_code | upcase }}</a>
                 {% else %}
-                  {% static_href %}<a href="{{ site.baseurl_root }}/{{ lang_code }}/"> {{ lang_code | upcase }}</a>{% endstatic_href %}
+                  <a href="{{ site.baseurl_root }}/{{ lang_code }}/"> {{ lang_code | upcase }}</a>
                 {% endif %}
               </li>
             {% endif %}
