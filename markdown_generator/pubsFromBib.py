@@ -31,16 +31,18 @@ publist = {
         "venuekey": "booktitle",
         "venue-pretext": "In the proceedings of ",
         "collection" : {"name":"publications",
-                        "permalink":"/publication/"}
-        
+                        "permalink":"/publication/"},
+        "lang": "en"  # Set language here (add more entries for other languages)
     },
     "journal":{
         "file": "pubs.bib",
         "venuekey" : "journal",
         "venue-pretext" : "",
         "collection" : {"name":"publications",
-                        "permalink":"/publication/"}
+                        "permalink":"/publication/"},
+        "lang": "en"  # Set language here (add more entries for other languages)
     } 
+    # Add more entries for other languages as needed, e.g. journal_nb, proceeding_nb with 'lang': 'nb'
 }
 
 html_escape_table = {
@@ -57,6 +59,10 @@ def html_escape(text):
 for pubsource in publist:
     parser = bibtex.Parser()
     bibdata = parser.parse_file(publist[pubsource]["file"])
+
+    lang = publist[pubsource].get("lang", "en")
+    output_dir = os.path.join("../_publications", lang)
+    os.makedirs(output_dir, exist_ok=True)
 
     #loop through the individual references in a given bibtex file
     for bib_id in bibdata.entries:
@@ -114,10 +120,9 @@ for pubsource in publist:
             
             ## YAML variables
             md = "---\ntitle: \""   + html_escape(b["title"].replace("{", "").replace("}","").replace("\\","")) + '"\n'
-            
-            md += """collection: """ +  publist[pubsource]["collection"]["name"]
-
-            md += """\npermalink: """ + publist[pubsource]["collection"]["permalink"]  + html_filename
+            md += f"lang: {lang}\n"  # Add language to YAML
+            md += "collection: " +  publist[pubsource]["collection"]["name"]
+            md += "\npermalink: " + publist[pubsource]["collection"]["permalink"]  + html_filename
             
             note = False
             if "note" in b.keys():
@@ -150,8 +155,9 @@ for pubsource in publist:
                 md += "\nUse [Google Scholar](https://scholar.google.com/scholar?q="+html.escape(clean_title.replace("-","+"))+"){:target=\"_blank\"} for full citation"
 
             md_filename = os.path.basename(md_filename)
+            md_filepath = os.path.join(output_dir, md_filename)
 
-            with open("../_publications/" + md_filename, 'w', encoding="utf-8") as f:
+            with open(md_filepath, 'w', encoding="utf-8") as f:
                 f.write(md)
             print(f'SUCCESSFULLY PARSED {bib_id}: \"', b["title"][:60],"..."*(len(b['title'])>60),"\"")
         # field may not exist for a reference
