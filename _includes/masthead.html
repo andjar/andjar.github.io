@@ -20,15 +20,20 @@
           </li>
           <!-- Language Switcher -->
           {% for lang_code in site.languages %}
+            {% assign lang_name = "" %}
+            {% assign lang_flag = "" %}
+            {% if lang_code == "en" %}
+              {% assign lang_name = "English" %}
+              {% assign lang_flag = "🇬🇧" %}
+            {% elsif lang_code == "nb" %}
+              {% assign lang_name = "Norsk Bokmål" %}
+              {% assign lang_flag = "🇳🇴" %}
+            {% endif %}
             {% if lang_code == site.active_lang %}
-              <li class="masthead__menu-item masthead__menu-item--active"><a href="#">{{ lang_code | upcase }}</a></li>
+              <li class="masthead__menu-item masthead__menu-item--active"><a href="#" title="{{ lang_name }}">{{ lang_flag }}</a></li>
             {% else %}
               <li class="masthead__menu-item">
-                {% if lang_code == site.default_lang %}
-                  <a href="{{ site.baseurl_root }}/"> {{ lang_code | upcase }}</a>
-                {% else %}
-                  <a href="{{ site.baseurl_root }}/{{ lang_code }}/"> {{ lang_code | upcase }}</a>
-                {% endif %}
+                <a href="{{ page.url | I18n_permalink: lang_code }}" title="{{ lang_name }}"> {{ lang_flag }}</a>
               </li>
             {% endif %}
           {% endfor %}
