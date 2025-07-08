@@ -17,10 +17,12 @@ layout: compress
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
-    <!-- Test translated string -->
-    <p style="text-align: center; background-color: #f0f0f0; padding: 10px;">
-      Translated 'tags_label': <strong>{{ site.data[site.active_lang].ui-text.tags_label | default: "Tags (default fallback):" }}</strong>
-    </p>
+    {% if site.debug_mode %}
+      <!-- Test translated string -->
+      <p style="text-align: center; background-color: #f0f0f0; padding: 10px;">
+        Translated 'tags_label': <strong>{{ site.data[site.active_lang].ui-text.tags_label | default: "Tags (default fallback):" }}</strong>
+      </p>
+    {% endif %}
 
     {{ content }}
 
