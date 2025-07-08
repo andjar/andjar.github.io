@@ -30,10 +30,11 @@
               {% assign lang_flag = "/images/flags/nb.svg" %}
             {% endif %}
             {% if lang_code == site.active_lang %}
-              <li class="masthead__menu-item masthead__menu-item--active"><a href="#" title="{{ lang_name }}"><img src="{{ lang_flag }}" alt="{{ lang_name }}" style="height:1em;vertical-align:middle;"></a></li>
+              <li class="masthead__menu-item masthead__menu-item--active"><a href="#" title="{{ lang_name }}"><img src="{{ site.baseurl }}{{ lang_flag }}" alt="{{ lang_name }}" style="height:1em;vertical-align:middle;"></a></li>
             {% else %}
+              {% capture lang_href %}{{site.baseurl}}/{% if lang_code != site.default_lang %}{{ lang_code }}/{% endif %}{% if page.permalink_lang[lang_code] != '/' %}{{page.permalink_lang[lang_code]}}{% endif %}{% endcapture %}
               <li class="masthead__menu-item">
-                <a href="{{ page.url | I18n_permalink: lang_code }}" title="{{ lang_name }}"><img src="{{ lang_flag }}" alt="{{ lang_name }}" style="height:1em;vertical-align:middle;"></a>
+                <a {% static_href %}href="{{ lang_href }}"{% endstatic_href %} title="{{ lang_name }}"><img src="{{ site.baseurl }}{{ lang_flag }}" alt="{{ lang_name }}" style="height:1em;vertical-align:middle;"></a>
               </li>
             {% endif %}
           {% endfor %}
