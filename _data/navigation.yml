@@ -8,22 +8,28 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "Publications"
+  - title: "Publications" # Fallback title
+    title_key: "nav_publications" # Key for ui-text.yml
     url: /publications/
 
   - title: "Talks"
+    title_key: "nav_talks"
     url: /talks/    
 
   - title: "Teaching"
+    title_key: "nav_teaching"
     url: /teaching/    
     
   - title: "Portfolio"
+    title_key: "nav_portfolio"
     url: /portfolio/
         
   - title: "Blog Posts"
+    title_key: "nav_blog"
     url: /year-archive/
     
   - title: "CV"
+    title_key: "nav_cv"
     url: /cv/
     
   # - title: "CV"
