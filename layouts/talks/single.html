@@ -62,16 +62,16 @@
   <!-- ================================== -->
   
   {{- if and .Params.location .Params.location.lat .Params.location.lon }}
-  <div id="map" class="map-container"></div>
+  <div id="map" class="map-container" data-lat="{{ .Params.location.lat }}" data-lon="{{ .Params.location.lon }}" data-event="{{ .Params.event }}" data-location-name="{{ .Params.location.name }}"></div>
   <script>
       {{- /* Fixes Hugo's parser */ -}}
-      var map = L.map('map').setView([{{ .Params.location.lat }}, {{ .Params.location.lon }}], 13);
+      var map = L.map('map').setView([parseFloat(document.getElementById('map').dataset.lat), parseFloat(document.getElementById('map').dataset.lon)], 13);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
           attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
-      var marker = L.marker([{{ .Params.location.lat }}, {{ .Params.location.lon }}]).addTo(map);
-      marker.bindPopup("<b>{{ .Params.event | safeJS }}</b><br>{{ .Params.location.name | safeJS }}").openPopup();
+      var marker = L.marker([parseFloat(document.getElementById('map').dataset.lat), parseFloat(document.getElementById('map').dataset.lon)]).addTo(map);
+      marker.bindPopup("<b>" + document.getElementById('map').dataset.event + "</b><br>" + document.getElementById('map').dataset.locationName).openPopup();
   </script>
   {{- end }}
 
