@@ -20,6 +20,7 @@
           {{ .Title }}
           {{- if .Draft }}<div class="draft-tag">DRAFT</div>{{- end }}
         </h2>
+        {{ partial "project_status_icon.html" (dict "status" .Params.status) }}
       </header>
       <div class="entry-content">
         <p>{{ .Summary | plainify | safeHTML }}</p>
