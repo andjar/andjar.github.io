@@ -46,6 +46,35 @@
       height: 100%;
   }
 
+/* ================================== */
+/* START OF CUSTOM PAPER METADATA     */
+/* ================================== */
+.paper-meta {
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.paper-authors {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.paper-authors li {
+    display: inline-block;
+    margin-right: 5px;
+    background-color: var(--secondary);
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.paper-authors a {
+    text-decoration: none;
+    color: var(--content);
+    font-weight: 500;
+}
+
 /* Styling for map containers on both single and list pages */
 .map-container {
     height: 400px;
