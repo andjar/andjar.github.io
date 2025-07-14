@@ -23,7 +23,8 @@ doi: "10.3389/fimmu.2021.752660"
 youtube: "aWeVus0I-e0"
 
 # Standard hugo params
-summary: "We comprehensively mapped the dynamic maternal immune system in normal pregnancy from first trimester to beyond term by analyzing cytokine patterns, revealing how maternal health and fetal sex impact it, and that post-term pregnancy induces significant immunological stress, providing a crucial reference for future research."
+summary: "We comprehensively mapped the dynamic maternal immune system in normal pregnancy from first trimester to beyond term by analyzing cytokine patterns."
+tags: ["pregnancy", "immunology", "first author", "ALASCA", "longitudinal data"]
 ---
 
 We recognize that pregnancy is a truly remarkable process, requiring a delicate balance within the immune system that constantly changes to support both the mother and the developing baby. Problems with this balance can lead to serious pregnancy complications, from infertility to preterm birth or preeclampsia. While we know some things about the immune system in early pregnancy, much less is understood about its behavior in the later stages, particularly when pregnancies go beyond their due date. Understanding these dynamic immune changes, and how factors like a mother's health or the baby's sex might influence them, is crucial for improving care. To address this, we undertook a comprehensive study, analyzing over a thousand blood samples from more than 700 pregnant women, to map the patterns of 22 different cytokines – important signaling molecules that reflect the body's immune state – from the first trimester right through to term and beyond. Our aim was to create a detailed and reliable reference of cytokine profiles in normal pregnancies, filling a significant gap in our current knowledge.

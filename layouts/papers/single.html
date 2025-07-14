@@ -78,6 +78,11 @@
   </div>
 
   <footer class="post-footer">
+    {{ with .Params.doi }}
+    <div class="read-full-paper">
+      <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">Read the full paper here.</a>
+    </div>
+    {{ end }}
     {{- if .Params.tags }}
     <ul class="post-tags">
       {{- range .Params.tags }}
