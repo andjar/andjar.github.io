@@ -1,0 +1,12 @@
+{{- define "main" -}}
+<header class="page-header">
+  <h1>
+    {{ .Title }}
+  </h1>
+</header>
+
+{{- range .Pages -}}
+{{- .Render "summary" -}}
+{{- end -}}
+
+{{- end }}{{/* end main */}}

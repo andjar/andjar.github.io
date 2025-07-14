@@ -4,10 +4,13 @@ date: 2023-10-27T10:00:00-05:00
 draft: false
 
 # Paper metadata
-authors:
+co_authors:
   - "Ada Lovelace"
   - "Alan Turing"
   - "Grace Hopper"
+co_authors_list:
+  - "Bjarne Stroustrup"
+  - "Linus Torvalds"
 journal: "Journal of Unlikely Results"
 doi: "10.1000/j.unlikely.2023.001"
 youtube: "dQw4w9WgXcQ"

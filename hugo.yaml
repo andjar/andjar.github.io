@@ -14,7 +14,8 @@ minify:
   minifyOutput: true
 
 taxonomies:
-  author: authors
+  coauthor: coauthors
+  journal: journals
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.

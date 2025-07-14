@@ -1,70 +1,76 @@
-/* Styling for the custom paper metadata section */
-.paper-meta {
-    background-color: var(--secondary);
-    border-radius: var(--radius);
-    padding: 1rem;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
+
+.two-column-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    gap: 20px; /* Space between columns */
 }
 
-.paper-meta-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+.left-column {
+    flex: 1; /* Takes up available space */
+    min-width: 300px; /* Minimum width for the column */
+}
+
+.right-column {
+    flex: 2; /* Takes up more space than the left column */
+    min-width: 300px; /* Minimum width for the column */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+    .left-column, .right-column {
+        min-width: unset; /* Remove min-width constraint */
+        width: 100%; /* Full width on small screens */
+    }
 }
 
 .paper-meta-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
-.paper-meta-item .icon {
-    width: 1.2rem;
-    height: 1.2rem;
-    stroke-width: 1.5;
+.paper-meta-item svg {
+    margin-right: 8px;
+    flex-shrink: 0; /* Prevent SVG from shrinking */
 }
-  
-  /* For responsive YouTube embeds */
-  .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #000;
-      margin-bottom: 20px;
-      border-radius: var(--radius);
-  }
-  
-  .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-  }
 
-/* Styling for map containers on both single and list pages */
+.paper-meta-item span {
+    word-break: break-word; /* Allow long text to break */
+}
+
+.co-author-list ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.co-author-list li {
+    margin-bottom: 5px;
+}
+
 .map-container {
-    height: 400px;
+    height: 400px; /* Set a fixed height for the map */
     width: 100%;
-    margin-bottom: 25px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    flex-shrink: 0; /* Prevents the container from collapsing in a flexbox layout */
+    background-color: #f0f0f0; /* Placeholder background */
+    border: 1px solid #ddd;
 }
 
-/* Styling for the list of talks */
-.entry-meta-event {
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-    color: var(--secondary-text-color);
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
 }
-.entry-meta-event svg {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 4px;
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
