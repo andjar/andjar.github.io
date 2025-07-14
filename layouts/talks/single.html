@@ -6,6 +6,32 @@
       {{ .Title }}
       {{- if .Draft }}<div class="draft-tag">DRAFT</div>{{- end }}
     </h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+      {{- if .IsTranslated -}}
+      <ul class="i18n_list">
+        {{- i18n "translations" | default "Translations" }}: 
+        {{- range .Translations }}
+        <li>
+          <a href="{{ .Permalink }}">
+            {{- if (and .Language.LanguageName .Language.ContentDir) }}
+            {{- .Language.LanguageName | emojify -}}
+            {{- else }}
+            {{- .Lang | emojify -}}
+            {{- end -}}
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+    {{- end }}
   </header>
 
   <!-- ================================== -->
@@ -38,6 +64,7 @@
   {{- if and .Params.location .Params.location.lat .Params.location.lon }}
   <div id="map" class="map-container"></div>
   <script>
+      {{- /* Fixes Hugo's parser */ -}}
       var map = L.map('map').setView([{{ .Params.location.lat }}, {{ .Params.location.lon }}], 13);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
@@ -58,6 +85,15 @@
     {{- .Content -}}
   </div>
 
+  <footer class="post-footer">
+    {{- if .Params.tags }}
+    <ul class="post-tags">
+      {{- range .Params.tags }}
+      <li><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </footer>
 </article>
 
 {{- end }}{{/* end main */}}
