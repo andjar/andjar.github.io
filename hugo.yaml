@@ -101,6 +101,9 @@ params:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
+taxonomies:
+  author: "authors"
+
   # for search
   # https://fusejs.io/api/options.html
   fuseOpts:
