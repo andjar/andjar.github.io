@@ -20,7 +20,7 @@
     {{- end -}}
     {{- $locations | jsonify -}}
 </div>
-<script src="{{ "/js/talkListMap.js" | relURL }}"></script>
+{{ with resources.Get "js/talkListMap.js" }}<script src="{{ .RelPermalink }}"></script>{{ end }}
 
 <div class="posts">
   {{- range .Pages.GroupByDate "2006" }}
