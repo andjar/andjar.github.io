@@ -97,7 +97,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/anjar/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -114,17 +114,17 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - identifier: papers	
+      name: papers
+      url: /papers/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
+    - identifier: projects
+      name: projects
+      url: /projects/
+      weight: 10
+    - identifier: talks
+      name: talks
+      url: /talks/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
