@@ -13,22 +13,9 @@
     {{- end }}
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
-      {{- if .IsTranslated -}}
-      <ul class="i18n_list">
-        {{- i18n "translations" | default "Translations" }}: 
-        {{- range .Translations }}
-        <li>
-          <a href="{{ .Permalink }}">
-            {{- if (and .Language.LanguageName .Language.ContentDir) }}
-            {{- .Language.LanguageName | emojify -}}
-            {{- else }}
-            {{- .Lang | emojify -}}
-            {{- end -}}
-          </a>
-        </li>
-        {{- end }}
-      </ul>
-      {{- end }}
+        <span>{{ .Date.Format "January 2, 2006" }}</span>
+        <span class="dot-divider"></span>
+        <span>{{ .ReadingTime }} min read</span>
     </div>
     {{- end }}
   </header>
@@ -37,28 +24,28 @@
   <!-- START OF CUSTOM PAPER METADATA     -->
   <!-- ================================== -->
   <div class="paper-meta">
-    {{ with .Params.authors }}
-    <div class="paper-meta-item">
-      <span class="meta-label">Authors:</span>
-      <span class="meta-value">{{ delimit . ", " }}</span>
-    </div>
-    {{ end }}
+    <div class="paper-meta-items">
+      {{ with .Params.authors }}
+      <div class="paper-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+        <span>{{ delimit . ", " }}</span>
+      </div>
+      {{ end }}
 
-    {{ with .Params.journal }}
-    <div class="paper-meta-item">
-      <span class="meta-label">Journal:</span>
-      <span class="meta-value"><em>{{ . }}</em></span>
-    </div>
-    {{ end }}
-    
-    {{ with .Params.doi }}
-    <div class="paper-meta-item">
-      <span class="meta-label">DOI:</span>
-      <span class="meta-value">
+      {{ with .Params.journal }}
+      <div class="paper-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>
+        <span><em>{{ . }}</em></span>
+      </div>
+      {{ end }}
+
+      {{ with .Params.doi }}
+      <div class="paper-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
         <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
-      </span>
+      </div>
+      {{ end }}
     </div>
-    {{ end }}
   </div>
   <!-- ================================== -->
   <!-- END OF CUSTOM PAPER METADATA       -->
