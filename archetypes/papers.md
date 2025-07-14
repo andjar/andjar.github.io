@@ -8,9 +8,7 @@ co_authors:
 {{- range .Params.co_authors }}
   - "{{ . }}"
 {{- end }}
-co_authors_list:
-  - "Co-Author One"
-  - "Co-Author Two"
+
 journal: "Journal of Scholarly Things"
 doi: "10.1234/journal.12345"
 # Optional: Enter the YouTube video ID, not the full URL

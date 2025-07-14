@@ -1,4 +1,3 @@
-
 .two-column-layout {
     display: flex;
     flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
@@ -73,4 +72,10 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.dot-divider::before {
+    content: "\2022"; /* Unicode character for a bullet point */
+    margin: 0 5px;
+    display: inline-block;
 }
