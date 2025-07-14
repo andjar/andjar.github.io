@@ -1,0 +1,47 @@
+/* Styling for the custom paper metadata section */
+.paper-meta {
+    background-color: var(--secondary);
+    border-radius: var(--radius);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    border: 1px solid var(--border-color);
+  }
+  
+  .paper-meta-item {
+    margin-bottom: 8px;
+  }
+  
+  .paper-meta-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .paper-meta .meta-label {
+    font-weight: bold;
+    color: var(--primary-text-color);
+    margin-right: 8px;
+  }
+  
+  .paper-meta .meta-value {
+    color: var(--secondary-text-color);
+  }
+  
+  /* For responsive YouTube embeds */
+  .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+  }
+  
+  .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }

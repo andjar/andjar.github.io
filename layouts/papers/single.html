@@ -1,0 +1,88 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ .Title }}
+      {{- if .Draft }}<div class="draft-tag">DRAFT</div>{{- end }}
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- if .IsTranslated -}}
+      <ul class="i18n_list">
+        {{- i18n "translations" | default "Translations" }}: 
+        {{- range .Translations }}
+        <li>
+          <a href="{{ .Permalink }}">
+            {{- if (and .Language.LanguageName .Language.ContentDir) }}
+            {{- .Language.LanguageName | emojify -}}
+            {{- else }}
+            {{- .Lang | emojify -}}
+            {{- end -}}
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+    {{- end }}
+  </header>
+
+  <!-- ================================== -->
+  <!-- START OF CUSTOM PAPER METADATA     -->
+  <!-- ================================== -->
+  <div class="paper-meta">
+    {{ with .Params.authors }}
+    <div class="paper-meta-item">
+      <span class="meta-label">Authors:</span>
+      <span class="meta-value">{{ delimit . ", " }}</span>
+    </div>
+    {{ end }}
+
+    {{ with .Params.journal }}
+    <div class="paper-meta-item">
+      <span class="meta-label">Journal:</span>
+      <span class="meta-value"><em>{{ . }}</em></span>
+    </div>
+    {{ end }}
+    
+    {{ with .Params.doi }}
+    <div class="paper-meta-item">
+      <span class="meta-label">DOI:</span>
+      <span class="meta-value">
+        <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
+      </span>
+    </div>
+    {{ end }}
+  </div>
+  <!-- ================================== -->
+  <!-- END OF CUSTOM PAPER METADATA       -->
+  <!-- ================================== -->
+  
+  {{- if .Params.youtube }}
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{ .Params.youtube }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  {{- end }}
+  
+  <div class="post-content">
+    {{- .Content -}}
+  </div>
+
+  <footer class="post-footer">
+    {{- if .Params.tags }}
+    <ul class="post-tags">
+      {{- range .Params.tags }}
+      <li><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </footer>
+</article>
+
+{{- end }}{{/* end main */}}
