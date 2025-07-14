@@ -8,46 +8,19 @@
 </div>
 
 <div id="map-list" class="map-container"></div>
-<script>
-    {{- /* Fixes Hugo's parser */ -}}
-    // Define map locations from Hugo data
-    const locations = [
-        {{- range .Pages -}}
-            {{- $page := . -}}
-            {{- with .Params.location -}}
-                {{- if and .lat .lon }}
-                    {
-                        "lat": {{ .lat }},
-                        "lon": {{ .lon }},
-                        "title": "{{- $page.Title | safeJS -}}",
-                        "event": "{{- .name | safeJS -}}",
-                        "url": "{{- $page.Permalink | safeJS -}}"
-                    },
-                {{- end -}}
+<!-- Create a placeholder for the talk data -->
+<div id="talk-data" style="display: none;">
+    {{- $locations := slice -}}
+    {{- range .Pages -}}
+        {{- with .Params.location -}}
+            {{- if and .lat .lon -}}
+                {{- $locations = $locations | append (dict "lat" .lat "lon" .lon "title" $.Title "event" .name "url" $.Permalink) -}}
             {{- end -}}
         {{- end -}}
-    ];
-
-    if (locations.length > 0) {
-        // ... rest of the script is unchanged ...
-        var map = L.map('map-list').setView([locations[0].lat, locations[0].lon], 4);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        locations.forEach(function(loc) {
-            var marker = L.marker([loc.lat, loc.lon]).addTo(map);
-            marker.bindPopup(`<b><a href="${loc.url}">${loc.title}</a></b><br>${loc.event}`);
-        });
-        
-        var group = new L.featureGroup(locations.map(loc => L.marker([loc.lat, loc.lon])));
-        map.fitBounds(group.getBounds().pad(0.5));
-    } else {
-        document.getElementById('map-list').style.display = 'none';
-    }
-</script>
+    {{- end -}}
+    {{- $locations | jsonify -}}
+</div>
+<script src="{{ "/js/talkListMap.js" | relURL }}"></script>
 
 <div class="posts">
   {{- range .Pages.GroupByDate "2006" }}
@@ -78,6 +51,12 @@
              {{ . }}
           {{- end -}}
         </span>
+        {{- with .Params.location.name -}}
+        <span class="entry-meta-event">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
+           {{ . }}
+        </span>
+        {{- end -}}
       </footer>
       <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
     </article>

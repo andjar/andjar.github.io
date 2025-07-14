@@ -2,29 +2,29 @@
 .paper-meta {
     background-color: var(--secondary);
     border-radius: var(--radius);
-    padding: 15px 20px;
+    padding: 1rem;
     margin-bottom: 20px;
-    font-size: 0.9em;
     border: 1px solid var(--border-color);
-  }
-  
-  .paper-meta-item {
-    margin-bottom: 8px;
-  }
-  
-  .paper-meta-item:last-child {
-    margin-bottom: 0;
-  }
-  
-  .paper-meta .meta-label {
-    font-weight: bold;
-    color: var(--primary-text-color);
-    margin-right: 8px;
-  }
-  
-  .paper-meta .meta-value {
-    color: var(--secondary-text-color);
-  }
+}
+
+.paper-meta-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.paper-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9em;
+}
+
+.paper-meta-item .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    stroke-width: 1.5;
+}
   
   /* For responsive YouTube embeds */
   .video-container {
