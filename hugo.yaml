@@ -14,7 +14,7 @@ minify:
   minifyOutput: true
 
 taxonomies:
-  coauthor: coauthors
+  coauthors: coauthors
   journal: journal
 
 params:
