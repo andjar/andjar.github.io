@@ -48,9 +48,9 @@
 }
 
 .co-author-pills li {
-    display: inline-block; /* Display list items inline */
-    margin-right: 5px; /* Space between pills */
-    margin-bottom: 5px; /* Space between rows of pills */
+    display: block; /* Display list items as block for one per row */
+    margin-right: 0; /* Remove right margin since not inline */
+    margin-bottom: 5px; /* Space between pills */
 }
 
 .co-author-pills li a {
