@@ -4,7 +4,10 @@ date: {{ .Date }}
 draft: true
 
 # Paper metadata
-authors: ["First Author", "Second Author"]
+authors:
+{{- range .Params.authors }}
+  - "{{ . }}"
+{{- end }}
 journal: "Journal of Scholarly Things"
 doi: "10.1234/journal.12345"
 # Optional: Enter the YouTube video ID, not the full URL

@@ -13,6 +13,9 @@ minify:
   disableXML: true
   minifyOutput: true
 
+taxonomies:
+  author: authors
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: ajarmund
@@ -114,7 +117,7 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: papers	
+    - identifier: papers
       name: papers
       url: /papers/
       weight: 20
