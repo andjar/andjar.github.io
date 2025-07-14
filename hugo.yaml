@@ -101,6 +101,11 @@ params:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
+  mainSections:
+    - papers
+    - projects
+    - talks
+
 taxonomies:
   author: "authors"
 
@@ -119,15 +124,15 @@ menu:
   main:
     - identifier: papers	
       name: papers
-      url: /papers/
+      url: /en/papers/
       weight: 20
     - identifier: projects
       name: projects
-      url: /projects/
+      url: /en/projects/
       weight: 10
     - identifier: talks
       name: talks
-      url: /talks/
+      url: /en/talks/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
