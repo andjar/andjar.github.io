@@ -175,3 +175,24 @@
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     text-decoration: underline;
   }
+
+.slink {
+  text-decoration: underline;
+  color: inherit;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.slink:hover, .slink:focus {
+  color: #0077cc;
+  text-decoration-color: #0077cc;
+}
+
+a, a:visited {
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+a:hover, a:focus {
+  color: #0077cc;
+  text-decoration: underline;
+  text-decoration-color: #0077cc;
+}
