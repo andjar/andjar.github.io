@@ -37,27 +37,7 @@
       <div class="entry-content">
         <p>{{ .Summary | plainify | safeHTML }}</p>
       </div>
-      <!-- Custom Journal Info in List -->
-      {{ with .Params.journal }}
-      {{- $journalPage := site.GetPage (printf "/journals/%s" (. | urlize)) -}}
-      <div class="entry-meta-journal">
-        <em><a href="{{ `journals/` | absLangURL }}{{ . | urlize }}">{{ . }}</a>{{ if $journalPage }}<sup>{{ $journalPage.Count }}</sup>{{ end }}</em>
-      </div>
-      {{ end }}
-      <!-- End Custom Journal Info -->
-
-      <!-- Custom Co-authors Info in List -->
-      {{ with .Params.co_authors }}
-      <div class="entry-meta-coauthors">
-        <ul class="co-author-list-in-summary">
-          {{- range $index, $author := . -}}
-          {{- $coauthorPage := site.GetPage (printf "/coauthors/%s" ($author | urlize)) -}}
-          <li><a href="{{ `coauthors/` | absLangURL }}{{ $author | urlize }}">{{ $author }}</a>{{ if $coauthorPage }}<sup>{{ $coauthorPage.Count }}</sup>{{ end }}</li>
-          {{- end -}}
-        </ul>
-      </div>
-      {{ end }}
-      <!-- End Custom Co-authors Info -->
+      
       <footer class="entry-footer">
         {{- partial "post_meta.html" . -}}
       </footer>

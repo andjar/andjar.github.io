@@ -4,7 +4,7 @@ date: 2023-10-27T10:00:00-05:00
 draft: false
 
 # Paper metadata
-co_authors:
+coauthors:
   - "Ada Lovelace"
   - "Alan Turing"
   - "Grace Hopper"
