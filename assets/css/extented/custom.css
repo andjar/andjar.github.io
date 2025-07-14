@@ -40,14 +40,51 @@
     word-break: break-word; /* Allow long text to break */
 }
 
-.co-author-list ul {
+.co-author-pills {
     list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 0;
 }
 
-.co-author-list li {
-    margin-bottom: 5px;
+.co-author-pills li {
+    display: inline-block; /* Display list items inline */
+    margin-right: 5px; /* Space between pills */
+    margin-bottom: 5px; /* Space between rows of pills */
+}
+
+.co-author-pills li a {
+    display: block;
+    padding: 5px 10px;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border-radius: var(--radius);
+    text-decoration: none;
+    white-space: nowrap; /* Prevent text from wrapping inside the pill */
+}
+
+.co-author-pills li a:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.co-author-pills li sup {
+    color: var(--secondary);
+}
+
+.paper-meta-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the start to accommodate multi-line pills */
+    margin-bottom: 10px;
+}
+
+.paper-meta-item svg {
+    margin-right: 8px;
+    flex-shrink: 0; /* Prevent SVG from shrinking */
+    margin-top: 5px; /* Adjust icon alignment with the first line of the pill */
+}
+
+.paper-meta-item span {
+    word-break: break-word; /* Allow long text to break */
 }
 
 .map-container {

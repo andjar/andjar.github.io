@@ -5,8 +5,13 @@
   </h1>
 </header>
 
-{{- range .Pages -}}
-{{- .Render "summary" -}}
-{{- end -}}
+<ul class="terms-list">
+  {{- range .Data.Terms.ByCount -}}
+  <li>
+    <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+    <sup>{{ .Count }}</sup>
+  </li>
+  {{- end -}}
+</ul>
 
 {{- end }}{{/* end main */}}
