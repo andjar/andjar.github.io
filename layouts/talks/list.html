@@ -1,0 +1,98 @@
+{{- define "main" }}
+
+<div class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="page-description">{{ .Description }}</div>
+    {{- end }}
+</div>
+
+<!-- ================================== -->
+<!-- START OF COMBINED MAP              -->
+<!-- ================================== -->
+<div id="map-list" class="map-container"></div>
+
+<script>
+    // Define map locations from Hugo data
+    const locations = [
+        {{- range .Pages -}}
+            {{- with .Params.location -}}
+                {{- if and .lat .lon }}
+                    {
+                        "lat": {{ .lat }},
+                        "lon": {{ .lon }},
+                        "title": "{{- ../Title | safeJS -}}",
+                        "event": "{{- .name | safeJS -}}",
+                        "url": "{{- ../Permalink -}}"
+                    },
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    ];
+
+    if (locations.length > 0) {
+        // Initialize the map and set its view to the first location or a default
+        var map = L.map('map-list').setView([locations[0].lat, locations[0].lon], 4);
+
+        // Add the OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Create a marker for each location
+        locations.forEach(function(loc) {
+            var marker = L.marker([loc.lat, loc.lon]).addTo(map);
+            marker.bindPopup(`<b><a href="${loc.url}">${loc.title}</a></b><br>${loc.event}`);
+        });
+
+        // Optional: Fit the map to show all markers
+        var group = new L.featureGroup(locations.map(loc => L.marker([loc.lat, loc.lon])));
+        map.fitBounds(group.getBounds().pad(0.5));
+    } else {
+        // Hide the map container if there are no locations with coordinates
+        document.getElementById('map-list').style.display = 'none';
+    }
+</script>
+<!-- ================================== -->
+<!-- END OF COMBINED MAP                -->
+<!-- ================================== -->
+
+<div class="posts">
+  {{- range .Pages.GroupByDate "2006" }}
+  <div class="archive-year">
+    <h2 class="archive-year-header">
+      {{.Key}}
+    </h2>
+    {{- range .Pages }}
+    <article class="post-entry">
+      <header class="entry-header">
+        <h2>
+          {{ .Title }}
+          {{- if .Draft }}<div class="draft-tag">DRAFT</div>{{- end }}
+        </h2>
+      </header>
+      <div class="entry-content">
+        <p>{{ .Summary | plainify | safeHTML }}</p>
+      </div>
+      <footer class="entry-footer">
+        <span class="entry-meta-event">
+          {{- with .Params.event -}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-building-community">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M8 9l5 5v7h-5v-4l-5 4v-7l5 -5" />
+                <path d="M6 21v-7m-2 2l8 -8l-4 -4l-4 4l8 8" />
+                <path d="M18 18h4v-4h-4v4z" />
+            </svg>
+             {{ . }}
+          {{- end -}}
+        </span>
+      </footer>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+  </div>
+  {{- end }}
+</div>
+
+{{- end }}{{/* end main */}}

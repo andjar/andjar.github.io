@@ -1,0 +1,63 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ .Title }}
+      {{- if .Draft }}<div class="draft-tag">DRAFT</div>{{- end }}
+    </h1>
+  </header>
+
+  <!-- ================================== -->
+  <!-- START OF CUSTOM TALK METADATA      -->
+  <!-- ================================== -->
+  <div class="paper-meta">
+    {{ with .Params.type }}
+    <div class="paper-meta-item">
+      <span class="meta-label">Type:</span>
+      <span class="meta-value">{{ . }}</span>
+    </div>
+    {{ end }}
+    {{ with .Params.event }}
+    <div class="paper-meta-item">
+      <span class="meta-label">Event:</span>
+      <span class="meta-value">{{ . }}</span>
+    </div>
+    {{ end }}
+    {{ with .Params.location }}
+    <div class="paper-meta-item">
+      <span class="meta-label">Location:</span>
+      <span class="meta-value">{{ .name }}</span>
+    </div>
+    {{ end }}
+  </div>
+  <!-- ================================== -->
+  <!-- END OF CUSTOM TALK METADATA        -->
+  <!-- ================================== -->
+  
+  {{- if and .Params.location .Params.location.lat .Params.location.lon }}
+  <div id="map" class="map-container"></div>
+  <script>
+      var map = L.map('map').setView([{{ .Params.location.lat }}, {{ .Params.location.lon }}], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+      var marker = L.marker([{{ .Params.location.lat }}, {{ .Params.location.lon }}]).addTo(map);
+      marker.bindPopup("<b>{{ .Params.event | safeJS }}</b><br>{{ .Params.location.name | safeJS }}").openPopup();
+  </script>
+  {{- end }}
+
+  {{- if .Params.youtube }}
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{ .Params.youtube }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  {{- end }}
+  
+  <div class="post-content">
+    {{- .Content -}}
+  </div>
+
+</article>
+
+{{- end }}{{/* end main */}}
