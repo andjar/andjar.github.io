@@ -27,13 +27,14 @@
 
 .paper-meta-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start to accommodate multi-line pills */
     margin-bottom: 10px;
 }
 
 .paper-meta-item svg {
     margin-right: 8px;
     flex-shrink: 0; /* Prevent SVG from shrinking */
+    margin-top: 5px; /* Adjust icon alignment with the first line of the pill */
 }
 
 .paper-meta-item span {
@@ -71,22 +72,6 @@
     color: var(--secondary);
 }
 
-.paper-meta-item {
-    display: flex;
-    align-items: flex-start; /* Align items to the start to accommodate multi-line pills */
-    margin-bottom: 10px;
-}
-
-.paper-meta-item svg {
-    margin-right: 8px;
-    flex-shrink: 0; /* Prevent SVG from shrinking */
-    margin-top: 5px; /* Adjust icon alignment with the first line of the pill */
-}
-
-.paper-meta-item span {
-    word-break: break-word; /* Allow long text to break */
-}
-
 .map-container {
     height: 400px; /* Set a fixed height for the map */
     width: 100%;
@@ -122,4 +107,46 @@
     content: "\2022"; /* Unicode character for a bullet point */
     margin: 0 5px;
     display: inline-block;
+}
+
+.co-author-list-in-summary {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+.co-author-list-in-summary li {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.co-author-list-in-summary li a {
+    display: block;
+    padding: 5px 10px;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    border-radius: var(--radius);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.co-author-list-in-summary li a:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.co-author-list-in-summary li sup {
+    color: var(--secondary);
+}
+
+.entry-meta-coauthors {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.entry-meta-journal {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
