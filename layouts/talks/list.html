@@ -13,14 +13,15 @@
     // Define map locations from Hugo data
     const locations = [
         {{- range .Pages -}}
+            {{- $page := . -}}
             {{- with .Params.location -}}
                 {{- if and .lat .lon }}
                     {
                         "lat": {{ .lat }},
                         "lon": {{ .lon }},
-                        "title": "{{- ../Title | safeJS -}}",
+                        "title": "{{- $page.Title | safeJS -}}",
                         "event": "{{- .name | safeJS -}}",
-                        "url": "{{- ../Permalink | safeJS -}}"  // <-- THE FIX IS HERE
+                        "url": "{{- $page.Permalink | safeJS -}}"
                     },
                 {{- end -}}
             {{- end -}}
