@@ -1,3 +1,6 @@
+{{- $customCSS := resources.Get "css/extented/custom.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $customCSS.RelPermalink }}" integrity="{{ $customCSS.Data.Integrity }}">
+
 {{/* We only want to load this on the 'talks' section pages */}}
 {{- if (eq .Section "talks") }}
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"

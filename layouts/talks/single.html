@@ -55,7 +55,8 @@
     <div class="right-column">
       {{- if and .Params.location .Params.location.lat .Params.location.lon }}
       <div id="map" class="map-container" data-lat="{{ .Params.location.lat }}" data-lon="{{ .Params.location.lon }}" data-event="{{ .Params.event | safeJS }}" data-location-name="{{ .Params.location.name | safeJS }}"></div>
-      {{ with resources.Get "js/talkMap.js" }}<script src="{{ .RelPermalink }}"></script>{{ end }}
+      {{- $talkMapJS := resources.Get "js/talkMap.js" | minify | fingerprint }}
+      <script src="{{ $talkMapJS.RelPermalink }}" integrity="{{ $talkMapJS.Data.Integrity }}"></script>
       {{- end }}
     </div>
   </div>
