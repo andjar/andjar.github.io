@@ -13,6 +13,7 @@
     {{- end }}
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
       {{- if .IsTranslated -}}
       <ul class="i18n_list">
         {{- i18n "translations" | default "Translations" }}: 
@@ -37,9 +38,9 @@
   <!-- START OF CUSTOM TALK METADATA      -->
   <!-- ================================== -->
   <div class="paper-meta">
-    {{ with .Params.type }}
+    {{ with .Params.presentation }}
     <div class="paper-meta-item">
-      <span class="meta-label">Type:</span>
+      <span class="meta-label">Presentation:</span>
       <span class="meta-value">{{ . }}</span>
     </div>
     {{ end }}
@@ -60,12 +61,28 @@
   <!-- END OF CUSTOM TALK METADATA        -->
   <!-- ================================== -->
 
+  {{- if and .Params.location .Params.location.lat .Params.location.lon }}
+  <div id="map" class="map-container" data-lat="{{ .Params.location.lat }}" data-lon="{{ .Params.location.lon }}" data-event="{{ .Params.event }}" data-location-name="{{ .Params.location.name }}"></div>
+  <script>
+      {{- /* Fixes Hugo's parser */ -}}
+      var map = L.map('map').setView([parseFloat(document.getElementById('map').dataset.lat), parseFloat(document.getElementById('map').dataset.lon)], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+      var marker = L.marker([parseFloat(document.getElementById('map').dataset.lat), parseFloat(document.getElementById('map').dataset.lon)]).addTo(map);
+      marker.bindPopup("<b>" + document.getElementById('map').dataset.event + "</b><br>" + document.getElementById('map').dataset.locationName).openPopup();
+  </script>
+  <div id="map" class="map-container" data-lat="{{ .Params.location.lat }}" data-lon="{{ .Params.location.lon }}" data-event="{{ .Params.event | safeJS }}" data-location-name="{{ .Params.location.name | safeJS }}"></div>
+  <script src="{{ "/assets/js/talkMap.js" | absURL }}"></script>
+  {{- end }}
+
   {{- if .Params.youtube }}
   <div class="video-container">
     <iframe src="https://www.youtube.com/embed/{{ .Params.youtube }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   {{- end }}
-  
+
   <div class="post-content">
     {{- .Content -}}
   </div>
