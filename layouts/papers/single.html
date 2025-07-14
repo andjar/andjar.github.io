@@ -23,13 +23,12 @@
   <div class="two-column-layout">
     <div class="left-column">
       <!-- Co-authors List (Pills) -->
-      {{ with .Params.co_authors }}
+      {{ with .GetTerms "coauthors" }}
       <div class="paper-meta-item">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
         <ul class="co-author-pills">
-          {{- range $index, $author := . -}}
-          {{- $coauthorPage := site.GetPage (printf "/coauthors/%s" ($author | urlize)) -}}
-          <li><a href="{{ `coauthors/` | absLangURL }}{{ $author | urlize }}">{{ $author }}</a><sup>{{ $coauthorPage.Count }}</sup></li>
+          {{- range . -}}
+          <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a><sup>{{ .Count }}</sup></li>
           {{- end -}}
         </ul>
       </div>
@@ -43,12 +42,13 @@
       <div class="paper-meta">
         <div class="paper-meta-items">
 
-          {{ with .Params.journal }}
-          {{- $journalPage := site.GetPage (printf "/journals/%s" (. | urlize)) -}}
+          {{ with .GetTerms "journals" }}
           <div class="paper-meta-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6l0 13"/><path d="M12 6l0 13"/><path d="M21 6l0 13"/></svg>
             <ul class="post-tags">
-              <li><a href="{{ `journals/` | absLangURL }}{{ . | urlize }}">{{ . }}</a>{{ if $journalPage }}<sup>{{ $journalPage.Count }}</sup>{{ end }}</li>
+              {{- range . -}}
+              <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a><sup>{{ .Count }}</sup></li>
+              {{- end -}}
             </ul>
           </div>
           {{ end }}
