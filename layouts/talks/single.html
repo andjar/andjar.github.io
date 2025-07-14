@@ -61,10 +61,12 @@
   <!-- END OF CUSTOM TALK METADATA        -->
   <!-- ================================== -->
   
-  {{- if and .Params.location .Params.location.lat .Params.location.lon }}
-  <div id="map" class="map-container" data-lat="{{ .Params.location.lat }}" data-lon="{{ .Params.location.lon }}" data-event="{{ .Params.event | safeJS }}" data-location-name="{{ .Params.location.name | safeJS }}"></div>
+  {{- with .Params.location }}
+  {{ `<!-- Debug: .lat=` }}{{ .lat }}{{ ` .lon=` }}{{ .lon }}{{ ` typeof .lat=` }}{{ reflect.Type .lat }}{{ ` typeof .lon=` }}{{ reflect.Type .lon }}{{ ` and .lat .lon =` }}{{ and .lat .lon }}{{ ` -->` | safeHTML }}
+  {{- if and .lat .lon }}
+  <div id="map" class="map-container" data-lat="{{ .lat }}" data-lon="{{ .lon }}" data-event="{{ .event | safeJS }}" data-location-name="{{ .name | safeJS }}"></div>
   <script src="{{ "/assets/js/talkMap.js" | absURL }}"></script>
-  {{- end }}
+  {{- end }}{{- end }}
 
   {{- if .Params.youtube }}
   <div class="video-container">
