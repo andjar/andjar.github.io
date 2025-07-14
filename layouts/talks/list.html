@@ -14,7 +14,7 @@
     {{- range .Pages -}}
         {{- with .Params.location -}}
             {{- if and .lat .lon -}}
-                {{- $locations = $locations | append (dict "lat" .lat "lon" .lon "title" $.Title "event" .name "url" $.Permalink) -}}
+                {{- $locations = $locations | append (dict "lat" .lat "lon" .lon "title" .Title "event" .name "url" .Permalink) -}}
             {{- end -}}
         {{- end -}}
     {{- end -}}
