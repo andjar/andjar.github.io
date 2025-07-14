@@ -13,7 +13,6 @@
     {{- end }}
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
-      {{- partial "post_meta.html" . -}}
       {{- if .IsTranslated -}}
       <ul class="i18n_list">
         {{- i18n "translations" | default "Translations" }}: 
