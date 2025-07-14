@@ -7,12 +7,9 @@
     {{- end }}
 </div>
 
-<!-- ================================== -->
-<!-- START OF COMBINED MAP              -->
-<!-- ================================== -->
 <div id="map-list" class="map-container"></div>
-
 <script>
+    {{- /* Fixes Hugo's parser. ADD THIS LINE. */ -}}
     // Define map locations from Hugo data
     const locations = [
         {{- range .Pages -}}
@@ -54,9 +51,6 @@
         document.getElementById('map-list').style.display = 'none';
     }
 </script>
-<!-- ================================== -->
-<!-- END OF COMBINED MAP                -->
-<!-- ================================== -->
 
 <div class="posts">
   {{- range .Pages.GroupByDate "2006" }}
