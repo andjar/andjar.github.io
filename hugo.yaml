@@ -1,6 +1,7 @@
 baseURL: "https://andjar.github.io/"
 title: ajarmund
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -135,3 +136,22 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+disableDefaultLanguageRedirect: false
+languages:
+  nb:
+    contentDir: content/nb
+    disabled: false
+    languageCode: nb-NO
+    languageDirection: ltr
+    languageName: Norwegian
+    weight: 2
+  en:
+    contentDir: content/en
+    disabled: false
+    languageCode: en-US
+    languageDirection: ltr
+    languageName: English
+    weight: 1
