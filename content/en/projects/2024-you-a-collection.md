@@ -2,7 +2,7 @@
 date: "2024-07-11"
 title: "You: a collection"
 external: "https://www.amazon.com/Reven-Raske-historier-Norwegian-Bokmal/dp/1471012069"
-tags: ["art", "AI", "book", "music", "childhood", "Suno AI"]
+tags: ["art", "ai", "book", "music", "childhood", "suno ai"]
 summary: "A song book (piano + vocals) with poems by me, set to music by AI."
 status: "completed"
 categories: ["projects"]

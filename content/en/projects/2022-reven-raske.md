@@ -2,7 +2,7 @@
 date: "2022-08-09"
 title: "Reven Raske"
 external: "https://www.amazon.com/Reven-Raske-historier-Norwegian-Bokmal/dp/1471012069"
-tags: ["art", "AI", "book", "children", "illustration", "storytelling", "DALL-E"]
+tags: ["art", "ai", "book", "children", "illustration", "storytelling", "dall-e"]
 summary: "A children's book illustrated with AI."
 status: "completed"
 categories: ["projects"]

@@ -23,7 +23,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["pregnancy", "immunology", "PCOS", "ALASCA", "longitudinal data"]
+tags: ["pregnancy", "immunology", "pcos", "alasca", "longitudinal data"]
 ---
 
 To be written
