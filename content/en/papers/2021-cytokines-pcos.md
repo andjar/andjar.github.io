@@ -1,5 +1,5 @@
 ---
-title: "Cytokine patterns in maternal serum from first trimester to term and beyond"
+title: "Changes in Serum Cytokines Throughout Pregnancy in Women With Polycystic Ovary Syndrome"
 date: 2021-09-16
 draft: false
 
