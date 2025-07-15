@@ -81,10 +81,12 @@ params:
     Content: "Welcome! My name is Anders Hagen Jarmund. I am a PhD student at NTNU, Norway. My main research interests are in the field of [ultrasound in neonates](https://andjar.github.io/en/tags/neodoppler/) and [pregnancy-related immunology](https://andjar.github.io/en/tags/immunology/)."
 
   socialIcons:"
-    - name: google-scholar
+    - name: "googlescholar"
       url: "https://scholar.google.com/citations?user=3oRbzeoAAAAJ"
     - name: github
       url: "https://github.com/andjar"
+    - name: "email"
+      url: "mailto:anders.h.jarmund@ntnu.no"
 
   analytics:
     google:
