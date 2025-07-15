@@ -16,7 +16,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["ultrasound", "neonates", "cerebral hemodynamics", "cluster analysis", "time series"]
+tags: ["ultrasound", "neonates", "cerebral hemodynamics", "cluster analysis", "time series", "neodoppler"]
 ---
 
 To be written
