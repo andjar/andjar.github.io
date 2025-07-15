@@ -52,7 +52,9 @@
     {{- if .Params.tags }}
     <ul class="post-tags">
       {{- range .Params.tags }}
-      <li><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+        {{ $tag := . }}
+        {{ $count := len (index $.Site.Taxonomies.tags ($tag | urlize)) }}
+        <li><a href="{{ "tags/" | absLangURL }}{{ $tag | urlize }}">{{ $tag }} ({{ $count }})</a></li>
       {{- end }}
     </ul>
     {{- end }}
