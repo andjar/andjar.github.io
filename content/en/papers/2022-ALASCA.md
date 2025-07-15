@@ -15,7 +15,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["statistics", "r", "first author", "alasca", "longitudinal data"]
+tags: ["statistics", "r", "first author", "alasca", "longitudinal data", "method development"]
 ---
 
 To be written

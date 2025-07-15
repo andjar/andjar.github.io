@@ -15,3 +15,4 @@ The music is available for listening at YouTube: [Link to YouTube Playlist](http
 The book is available for purchase:
 
 - [Amazon](https://www.amazon.com/You-collection-Anders-Hagen-Jarmund/dp/1445284618)
+- [Adlibris](https://www.adlibris.com/nb/bok/you-9781445284613)

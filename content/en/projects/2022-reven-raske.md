@@ -15,3 +15,4 @@ This is likely the first published Norwegian children's book that is fully illus
 The book is available for purchase:
 
 - [Amazon](https://www.amazon.com/Reven-Raske-historier-Norwegian-Bokmal/dp/1471012069)
+- [Adlibris](https://www.adlibris.com/nb/bok/reven-raske-9781471012068)
