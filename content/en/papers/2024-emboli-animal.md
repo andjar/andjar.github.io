@@ -18,7 +18,7 @@ coauthors:
   - "Arild Espenes"
   - "Erik Waage Nielsen"
 
-journal: "JBJS Open Acces"
+journal: "JBJS Open Access"
 doi: "10.2106/JBJS.OA.23.00128"
 youtube: ""
 
