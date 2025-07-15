@@ -6,7 +6,7 @@ draft: false
 # Paper metadata
 coauthors:
   - "Steinar Kristiansen"
-  - "Benjamin Stage Storm"
+  - "Benjamin Storm"
   - "Åse Eeg Emblem"
   - "Renathe Henriksen Grønli"
   - "Kristin Pettersen"
