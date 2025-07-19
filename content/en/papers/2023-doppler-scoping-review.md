@@ -17,7 +17,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["ultrasound", "neonates", "cerebral hemodynamics", "scoping review", "doppler ultrasound", "neodoppler"]
+tags: ["ultrasound", "neonates", "cerebral hemodynamics", "scoping review", "doppler ultrasound", "neodoppler", "first author"]
 ---
 
 To be written

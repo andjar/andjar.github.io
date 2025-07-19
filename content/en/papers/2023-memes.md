@@ -19,7 +19,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["medicine", "professionalism", "medical education", "social media", "memes", "instagram"]
+tags: ["medicine", "professionalism", "medical education", "social media", "memes", "instagram", "first author"]
 ---
 
 To be written
