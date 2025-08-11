@@ -6,11 +6,11 @@ draft: false
 # Paper metadata
 coauthors:
   - "Mariell Ryssdal"
-  - "Johanne E. Skage"
-  - "Anders H. Jarmund"
+  - "Johanne Skage"
+  - "Anders Hagen Jarmund"
   - "Liv Guro E. Hanem"
-  - "Tone S. Løvvik"
-  - "Guro F. Giskeødegård"
+  - "Tone Løvvik"
+  - "Guro Giskeødegård"
   - "Ann-Charlotte Iversen"
   - "Eszter Vanky"
 
