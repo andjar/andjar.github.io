@@ -14,7 +14,7 @@ coauthors:
   - "Ann-Charlotte Iversen"
   - "Eszter Vanky"
 
-journal: "The Journal of Clinical Endocrinology & Metabolism"
+journal: "BJOG"
 doi: "10.1111/1471-0528.18320"
 youtube: ""
 
