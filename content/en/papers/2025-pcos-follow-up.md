@@ -20,7 +20,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["pregnancy", "allergies", "eczema", "infection, "immunology", "pcos", "metformin", "longitudinal data"]
+tags: ["pregnancy", "allergies", "eczema", "infection", "immunology", "pcos", "metformin", "longitudinal data"]
 ---
 
 To be written
