@@ -5,6 +5,7 @@ draft: false
 
 # Paper metadata
 coauthors:
+  - "Anders Hagen Jarmund"
   - "Sofie Eline Tollefsen"
   - "Mariell Ryssdal"
   - "Audun Bakke Jensen"
