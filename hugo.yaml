@@ -122,9 +122,9 @@ menu:
       name: projects
       url: /projects/
       weight: 10
-    - identifier: talks
-      name: talks
-      url: /talks/
+    - identifier: outreach
+      name: outreach
+      url: /outreach/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true

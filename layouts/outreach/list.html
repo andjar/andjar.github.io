@@ -8,8 +8,8 @@
 </div>
 
 <div id="map-list" class="map-container"></div>
-<!-- Create a placeholder for the talk data -->
-<div id="talk-data" style="display: none;">
+<!-- Create a placeholder for the outreach data -->
+<div id="outreach-data" style="display: none;">
     {{- $locations := slice -}}
     {{- range .Pages -}}
         {{- with .Params.location -}}
@@ -20,7 +20,7 @@
     {{- end -}}
     {{- $locations | jsonify -}}
 </div>
-{{- $talkListMapJS := resources.Get "js/talkListMap.js" | minify | fingerprint }}
+{{- $talkListMapJS := resources.Get "js/outreachListMap.js" | minify | fingerprint }}
 <script src="{{ $talkListMapJS.RelPermalink }}" integrity="{{ $talkListMapJS.Data.Integrity }}"></script>
 
 <div class="posts">

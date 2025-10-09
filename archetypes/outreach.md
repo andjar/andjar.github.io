@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 
-# Talk metadata
+# Outreach metadata
 # type can be "Talk", "Poster", "Keynote", etc.
 type: "Talk" 
 event: "Conference on Interesting Topics"

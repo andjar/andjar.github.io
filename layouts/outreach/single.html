@@ -23,7 +23,7 @@
   <div class="two-column-layout">
     <div class="left-column">
       <!-- ================================== -->
-      <!-- START OF CUSTOM TALK METADATA      -->
+      <!-- START OF CUSTOM OUTREACH METADATA      -->
       <!-- ================================== -->
       <div class="paper-meta">
         <div class="paper-meta-items">
@@ -60,14 +60,14 @@
         </div>
       </div>
       <!-- ================================== -->
-      <!-- END OF CUSTOM TALK METADATA        -->
+      <!-- END OF CUSTOM OUTREACH METADATA        -->
       <!-- ================================== -->
     </div>
 
     <div class="right-column">
       {{- if and .Params.location .Params.location.lat .Params.location.lon }}
       <div id="map" class="map-page-container" data-lat="{{ .Params.location.lat }}" data-lon="{{ .Params.location.lon }}" data-event="{{ .Params.event | safeJS }}" data-location-name="{{ .Params.location.name | safeJS }}"></div>
-      {{- $talkMapJS := resources.Get "js/talkMap.js" | minify | fingerprint }}
+      {{- $talkMapJS := resources.Get "js/outreachMap.js" | minify | fingerprint }}
       <script src="{{ $talkMapJS.RelPermalink }}" integrity="{{ $talkMapJS.Data.Integrity }}"></script>
       {{- end }}
     </div>
