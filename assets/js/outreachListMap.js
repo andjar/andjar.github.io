@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var mapElement = document.getElementById('map-list');
-    var talkDataElement = document.getElementById('talk-data');
+    var talkDataElement = document.getElementById('outreach-data');
 
     if (mapElement && talkDataElement) {
         var locations = JSON.parse(talkDataElement.textContent.trim());
