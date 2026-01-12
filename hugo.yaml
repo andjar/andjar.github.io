@@ -80,6 +80,10 @@ params:
           url: "https://scholar.google.com/citations?user=3oRbzeoAAAAJ"
         - name: "github"
           url: "https://github.com/andjar"
+        - name: "inaturalist"
+          url: "https://www.inaturalist.org/people/ajarmund"
+        - name: "orcid"
+          url: "https://orcid.org/0000-0002-3923-1637"
         - name: "email"
           url: "mailto:anders.h.jarmund@ntnu.no"
 
@@ -152,7 +156,7 @@ languages:
       # home-info mode
       homeInfoParams:
         Title: "Hei \U0001F44B"
-        Content: "Velkommen! Jeg heter Anders Hagen Jarmund og er PhD-student ved NTNU i Trondheim. Forskningen min handler stort sett om [ultralyd og nyfødte](https://andjar.github.io/no/tags/neodoppler/) og [svangerskaps-immunologi](https://andjar.github.io/no/tags/immunology/). Andre hobby-prosjekter handler stort sett om [ai](https://andjar.github.io/no/tags/ai/) og [metodeutvikling](https://andjar.github.io/no/tags/method-development/)."
+        Content: "Velkommen! Jeg heter Anders Hagen Jarmund og er PhD-student ved NTNU i Trondheim. Forskningen min handler stort sett om [ultralyd og nyfødte](https://andjar.github.io/no/tags/neodoppler/) og [svangerskaps-immunologi](https://andjar.github.io/no/tags/immunology/). Andre hobby-prosjekter handler stort sett om [ai](https://andjar.github.io/no/tags/ai/) og [metodeutvikling](https://andjar.github.io/no/tags/method-development/). Jeg liker også å ta bilder [i naturen](https://www.inaturalist.org/people/ajarmund)."
   en:
     contentDir: content/en
     disabled: false
@@ -164,4 +168,4 @@ languages:
       # home-info mode
       homeInfoParams:
         Title: "Hi there \U0001F44B"
-        Content: "Welcome! My name is Anders Hagen Jarmund. I am a PhD student at NTNU, Norway. My main research interests are in the field of [ultrasound in neonates](https://andjar.github.io/en/tags/neodoppler/) and [pregnancy-related immunology](https://andjar.github.io/en/tags/immunology/). Other hobby projects are about [ai](https://andjar.github.io/en/tags/ai/) and [method development](https://andjar.github.io/en/tags/method-development/)."
+        Content: "Welcome! My name is Anders Hagen Jarmund. I am a PhD student at NTNU, Norway. My main research interests are in the field of [ultrasound in neonates](https://andjar.github.io/en/tags/neodoppler/) and [pregnancy-related immunology](https://andjar.github.io/en/tags/immunology/). Other hobby projects are about [ai](https://andjar.github.io/en/tags/ai/) and [method development](https://andjar.github.io/en/tags/method-development/). I also enjoy [nature photography](https://www.inaturalist.org/people/ajarmund)."
