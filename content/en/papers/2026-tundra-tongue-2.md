@@ -8,7 +8,7 @@ coauthors:
   - "Anders Hagen Jarmund"
   - "Sofie Eline Tollefsen"
   - "Baard Cristoffer Sakshaug"
-  - "Yashar Honarmandi
+  - "Yashar Honarmandi"
   - "Sverre Helge Torp"
 
 journal: "International Journal of Pediatric Otorhinolaryngology"
