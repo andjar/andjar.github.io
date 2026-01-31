@@ -19,7 +19,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["ultrasound", "neonates", "cerebral hemodynamics", "autoregulation", "time series", "neodoppler"]
+tags: ["ultrasound", "neonatology", "cerebral hemodynamics", "autoregulation", "time series", "neodoppler"]
 ---
 
 To be written

@@ -18,7 +18,7 @@ youtube: ""
 
 # Standard hugo params
 summary: ""
-tags: ["neodoppler", "surgery", "autoregulation", "cerebreal blood flow"]
+tags: ["neodoppler", "surgery", "autoregulation", "cerebreal blood flow", "cerebral hemodynamics", "ultrasound", "neonatology"]
 ---
 
 To be written
